@@ -40,3 +40,64 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//start
+
+const navItem = document.querySelector('nav').querySelectorAll('a');
+navItem.forEach(function(value, index) {value.text = siteContent.nav[`nav-item-${index+1}`]});
+
+const navText = document.querySelectorAll('a');
+navText.forEach(function( text ) {text.style.color = 'green';
+});
+
+let newAnchor = document.createElement('a');
+newAnchor.textContent = 'aStart';
+
+// const navTag = document.querySelector('nav');
+// navTag.appendChild(newAnchor);
+
+let preAnchor = document.createElement('a');
+preAnchor.textContent = 'preStart';
+
+const navTag = document.querySelector('nav');
+navTag.appendChild(newAnchor);
+navTag.prepend(preAnchor)
+
+let header = document.getElementById("cta-img");
+header.setAttribute('src', siteContent["cta"]["img-src"])
+
+let mid_page_accent = document.getElementById("middle-img");
+mid_page_accent.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+
+const tagNameTrial = document.querySelectorAll('h4');
+console.log(tagNameTrial);
+tagNameTrial.forEach(function( currentValue ) {currentValue.style.color = 'red';
+});
+
+tagNameTrial[0].innerHTML = siteContent['main-content']['features-h4'];
+tagNameTrial[1].innerHTML = siteContent['main-content']['about-h4'];
+tagNameTrial[2].innerHTML = siteContent['main-content']['services-h4'];
+tagNameTrial[3].innerHTML = siteContent['main-content']['product-h4'];
+tagNameTrial[4].innerHTML = siteContent['main-content']['vision-h4'];
+tagNameTrial[5].innerHTML = siteContent['contact']['contact-h4'];
+
+const pGraphs = document.querySelectorAll('p');
+console.log(pGraphs);
+
+pGraphs[0].outerHTML = siteContent['main-content']['features-content'];
+pGraphs[1].outerHTML = siteContent['main-content']['about-content'];
+pGraphs[2].outerHTML = siteContent['main-content']['services-content'];
+pGraphs[3].outerHTML = siteContent['main-content']['product-content'];
+pGraphs[4].outerHTML = siteContent['main-content']['vision-content'];
+pGraphs[5].outerHTML = siteContent['contact']['address'];
+pGraphs[6].outerHTML = siteContent['contact']['phone'];
+pGraphs[7].outerHTML = siteContent['contact']['email'];
+pGraphs[8].outerHTML = siteContent['footer']['copyright'];
+
+const dISAwesome = document.querySelector('h1');
+dISAwesome.innerHTML = siteContent['cta']['h1'];
+
+const butt_on = document.querySelector('button');
+butt_on.innerHTML = siteContent['cta']['button'];
+
